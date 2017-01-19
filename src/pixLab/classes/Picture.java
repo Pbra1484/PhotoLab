@@ -12,7 +12,7 @@ import java.util.List; // resolves problem with java.awt.List and java.util.List
  * SimplePicture and allows the student to add functionality to
  * the Picture class.  
  * 
- * @author Barbara Ericson ericson@cc.gatech.edu
+ * @author Patrick Brashear
  */
 public class Picture extends SimplePicture 
 {
@@ -253,6 +253,66 @@ public class Picture extends SimplePicture
           leftPixel.setColor(Color.WHITE);
       }
     }
+  }
+  
+  public void mirrorDiagonal()
+  {
+	  
+	  
+	  Pixel [][] pixels = this.getPixels2D();
+	  Pixel tR = null;
+	  Pixel bL = null;
+	  int limit = Math.min(pixels.length, pixels[0].length);
+	 
+//	  if(pixels.length > pixels[0].length)
+//	  {
+//		  limit = pixels[0].length;
+//	  }
+//	  else if(pixels.length < pixels[0].length)
+//	  {
+//		  limit = pixels.length;
+//	  }
+//	  else
+//	  {
+//		  limit = pixels.length;
+//	  }
+	 
+	  for(int row = 0; row < limit; row++)
+	  {
+		  for(int col = 0; col < limit; col++)
+		  {
+			  tR = pixels[row][col];
+			  bL = pixels[col][row];
+			 
+			  bL.setColor(tR.getColor());
+		  }
+	  }
+	  
+	  
+  }
+  
+  public void mirrorDiagonalLeftUp()
+  {
+	  Pixel [][] pixels = this.getPixels2D();
+	  Pixel tL = null;
+	  Pixel bR = null;
+	  
+	  int shortest = Math.min(pixels.length, pixels[0].length);
+	  
+	  for(int row = 0; row < shortest; row++)
+	  {
+		  for(int col = 0; col < shortest; col++)
+		  {
+			  if(row + col != shortest -1)
+			  {
+				  tL = pixels[row][col];
+				  bR = pixels[shortest - col - 1][shortest - row - 1];
+				  tL.setColor(bR.getColor());
+			  }
+		  }
+	  }
+	  
+	  
   }
   
   
