@@ -315,6 +315,44 @@ public class Picture extends SimplePicture
 	  
   }
   
+  public void mirrorGull()
+  {
+	  Pixel [][] pixels = this.getPixels2D();
+	  Pixel gull = null;
+	  Pixel mirror = null;
+	  
+	  for(int row = 230; row < 330; row++)
+	  {
+		  for(int col = 230; col < 345; col++)
+		  {
+			  gull = pixels[row][col];
+			  mirror = pixels[row][col - 115];
+			  
+			  mirror.setColor(gull.getColor());
+		  }
+	  }
+  }
+  
+  public void mirrorArms()
+  {
+	  Pixel [][] pixels = this.getPixels2D();
+	  Pixel arm = null;
+	  Pixel mirror = null;
+	  
+	  for(int row = 191 ; row > 157; row--)
+	  {
+		  for(int col = 104 ; col < 170; row++)
+		  {
+			  arm = pixels[row][col];
+			  mirror = pixels[row + 25][col];
+			  
+			  mirror.setColor(arm.getColor());
+			  
+			  
+			  
+		  }
+	  }
+  }
   
   /* Main method for testing - each class in Java can have a main 
    * method 
