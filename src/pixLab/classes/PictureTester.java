@@ -98,6 +98,14 @@ public class PictureTester
 	  snow.mirrorArms();
 	  snow.explore();
   }
+
+  public static void testEdgDetecsion()
+  {
+	  Picture swan = new Picture("swan.jpg");
+	  swan.edgDetecsion(10);
+	  swan.explore();
+	
+  }
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -119,7 +127,7 @@ public class PictureTester
 	//testMirrorVerticalRightToLeft();
 	//testMirrorBottomToTop();
     //testMirrorTemple();
-      testMirrorArms();
+    //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
@@ -132,5 +140,6 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
+	  testEdgDetecsion();
   }
 }
