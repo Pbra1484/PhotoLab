@@ -211,6 +211,23 @@ public class Picture extends SimplePicture
     }   
   }
 
+  
+  public void copyCustom(Picture basePic, int startRow, int endRow, int startCol, int endCol)
+  {
+	  Pixel fromPixel = null;
+	  Pixel toPixel = null;
+	  Pixel [][] toPicture = this.getPixels2D();
+	  Pixel [][] fromPicture = basePic.getPixels2D();
+	  for(int fromRow = 0, toRow = startRow; fromRow < fromPicture.length && toRow < toPicture.length && toRow < endRow; fromRow++, toRow++)
+	  {
+		  for(int fromCol = 0, toCol = startCol; fromCol < fromPicture[0].length && toCol < toPicture[0].length && toCol < endCol; fromCol++, toCol++)
+		  {
+			  fromPixel = fromPicture[fromRow][fromCol];
+			  toPixel = toPicture[toRow][toCol];
+			  toPixel.setColor(fromPixel.getColor());
+		  }
+	  }
+  }
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
@@ -341,10 +358,10 @@ public class Picture extends SimplePicture
 	  
 	  for(int row = 191 ; row > 157; row--)
 	  {
-		  for(int col = 104 ; col < 170; row++)
+		  for(int col = 104 ; col < 300; col++)
 		  {
 			  arm = pixels[row][col];
-			  mirror = pixels[row + 25][col];
+			  mirror = pixels[row + 60][col];
 			  
 			  mirror.setColor(arm.getColor());
 			  
@@ -389,15 +406,53 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void fullRandom()
+  {
+	  Pixel [][] currentPicture = this.getPixels2D();
+	  for(Pixel [] row : currentPicture)
+	  {
+		  for(Pixel currentPixel : row)
+		  {
+			  int red = (int)(Math.random() * 256);
+			  int green = (int)(Math.random() * 256);
+			  int blue = (int)(Math.random() * 256);
+			  
+			  currentPixel.setColor(new Color(red, green, blue));
+		  }
+	  }
+  }
+  
+  public void fullRandomGreen()
+  {
+	  Pixel [][] currentPicture = this.getPixels2D();
+	  for(Pixel [] row : currentPicture)
+	  {
+		  for(Pixel currentPixel : row)
+		  {
+			  int green = (int)(Math.random() * 256);
+			  
+			  currentPixel.setGreen(green);
+		  }
+	  }
+  }
+
+  
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
   public static void main(String[] args) 
   {
-    Picture beach = new Picture("beach.jpg");
-    beach.explore();
+    Picture beach = new Picture("kitten2.jpg");
+    beach.explore();    
+    beach.mirrorGull();
+     beach.mirrorArms();   
+     beach.mirrorDiagonal();
+    beach.mirrorDiagonalLeftUp();
     beach.zeroBlue();
+
+//    beach.edgDetecsion(10);
     beach.explore();
+    beach.write("caterfly.jpg");
   }
   
 } // this } is the end of class Picture, put all new methods before this

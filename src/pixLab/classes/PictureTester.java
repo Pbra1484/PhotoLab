@@ -62,6 +62,14 @@ public class PictureTester
     canvas.explore();
   }
   
+  public static void testCopyCustom()
+  {
+	  Picture picture = new Picture("snowman.jpg");
+	  Picture copyed = new Picture("swan.jpg");
+	  picture.copyCustom(copyed, 30, 100, 2, 150);
+	  picture.explore();
+  }
+  
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
@@ -132,6 +140,7 @@ public class PictureTester
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
+	  testCopyCustom();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
@@ -140,6 +149,6 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
-	  testEdgDetecsion();
+	//testEdgDetecsion();
   }
 }
