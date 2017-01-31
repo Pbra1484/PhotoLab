@@ -115,6 +115,13 @@ public class PictureTester
 	
   }
   
+  public static void testSpecialCollage()
+  {
+	  Picture base = new Picture("600x600.jpg");
+	  base.createSpecialCollage();
+	  base.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -140,7 +147,7 @@ public class PictureTester
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
-	  testCopyCustom();
+	//testCopyCustom();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
@@ -150,5 +157,6 @@ public class PictureTester
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
 	//testEdgDetecsion();
+	  testSpecialCollage();
   }
 }
