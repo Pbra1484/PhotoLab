@@ -115,6 +115,7 @@ public class PictureTester
 	
   }
   
+<<<<<<< HEAD
   public static void sadMeme()
   {
 	  Picture sadMeme = new Picture("meh.jpg");
@@ -123,6 +124,13 @@ public class PictureTester
 	  sadMeme.addMessage("Its not woth the bad code", 55, 200);
 	  sadMeme.explore();
 	  sadMeme.write("SADMeme.jpg");
+=======
+  public static void testSpecialCollage()
+  {
+	  Picture base = new Picture("600x600.jpg");
+	  base.createSpecialCollage();
+	  base.explore();
+>>>>>>> origin/master
   }
   
   /** Main method for testing.  Every class can have a main
@@ -160,6 +168,10 @@ public class PictureTester
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
 	//testEdgDetecsion();
+<<<<<<< HEAD
 	  sadMeme();
+=======
+	  testSpecialCollage();
+>>>>>>> origin/master
   }
 }
