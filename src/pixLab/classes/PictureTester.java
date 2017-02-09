@@ -115,6 +115,16 @@ public class PictureTester
 	
   }
   
+  public static void sadMeme()
+  {
+	  Picture sadMeme = new Picture("meh.jpg");
+	  sadMeme.addMessage("Singles Awarness Day", 60, 20);
+	  sadMeme.addMessage("The day that reminds you", 55, 40);
+	  sadMeme.addMessage("Its not woth the bad code", 55, 200);
+	  sadMeme.explore();
+	  sadMeme.write("SADMeme.jpg");
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -140,7 +150,7 @@ public class PictureTester
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
-	  testCopyCustom();
+	//testCopyCustom();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
@@ -150,5 +160,6 @@ public class PictureTester
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
 	//testEdgDetecsion();
+	  sadMeme();
   }
 }

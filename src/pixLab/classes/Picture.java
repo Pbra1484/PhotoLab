@@ -452,6 +452,11 @@ public class Picture extends SimplePicture
 	  }
   }
 
+  public void sadMeme()
+  {
+	  Picture sadMeme = new
+	  sadMeme.addMessage();
+  }
   
   /* Main method for testing - each class in Java can have a main 
    * method 
