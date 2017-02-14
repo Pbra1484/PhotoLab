@@ -136,9 +136,9 @@ public class PictureTester
   
   public static void testGlitch()
   {
-	  Picture glitch = new Picture("flower1.jpg");
+	  Picture glitch = new Picture("beach.jpg");
 	  glitch.gLiTcH();
-	//  glitch.explore();
+	  glitch.explore();
   }
   
   /** Main method for testing.  Every class can have a main

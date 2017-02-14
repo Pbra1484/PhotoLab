@@ -460,13 +460,16 @@ public class Picture extends SimplePicture
 	  Pixel[][]  picture = this.getPixels2D();
 	  Pixel main  =  null;
 	  Pixel second = null;
-	  for(int times = 0; times < 4; times++)
+	  for(int times = 0; times < 100; times++)
 	  {
-		  int randRow =  (int)Math.random()*picture.length;
-		  int randCol =  (int)Math.random()*picture[0].length;
-		  for(int row = randRow ; row < randRow + 100; row++)
+		  
+		  int filter = (int)((Math.random()*4));
+		  int randRow =  (int)(Math.random()*picture.length);
+		  int randCol =  (int)(Math.random()*picture[0].length);
+		  int shift = ((int)((Math.random()*290)+10));
+		  for(int row = randRow ; row < randRow + (int)((Math.random()*290)+10); row++)
 		  {
-			  for(int col = randCol ; col < randCol + 100; col++)
+			  for(int col = randCol ; col < (randCol + shift); col++)
 			  {
 				  if(row <  picture.length - 10 && col < picture[0].length - 20 )
 				  {
@@ -477,12 +480,18 @@ public class Picture extends SimplePicture
 						  second = picture[row][col];
 					  
 						  second.setColor(main.getColor());
-						  if(Math.random() < 0.1)
+						  if(filter == 1)
 						  {
-							  int red = (int)(Math.random() * 256);
-							  int green = (int)(Math.random() * 256);
-							  int blue = (int)(Math.random() * 256);
-							 second.setColor(new Color(red, green, blue));
+
+							 second.setColor(new Color(0, second.getGreen(), second.getBlue()));
+						  }
+						  else if (filter == 2)
+						  {
+							  second.setColor(new Color(second.getRed(), 0, second.getBlue()));
+						  }
+						  else if (filter == 3)
+						  {
+							  second.setColor(new Color(second.getRed(), second.getGreen(), 0));
 						  }
 					  }
 				  }
