@@ -464,9 +464,6 @@ public class Picture extends SimplePicture
 	  {
 		  int randRow =  (int)Math.random()*picture.length;
 		  int randCol =  (int)Math.random()*picture[0].length;
-		  
-		  
-		  
 		  for(int row = randRow ; row < randRow + 100; row++)
 		  {
 			  for(int col = randCol ; col < randCol + 100; col++)
