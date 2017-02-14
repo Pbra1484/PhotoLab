@@ -134,6 +134,13 @@ public class PictureTester
 
   }
   
+  public static void testGlitch()
+  {
+	  Picture glitch = new Picture("flower1.jpg");
+	  glitch.gLiTcH();
+	//  glitch.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -169,8 +176,8 @@ public class PictureTester
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
 	//testEdgDetecsion();
- sadMeme();
-
-	  testSpecialCollage();
+	//sadMeme();
+	  testGlitch();
+	//testSpecialCollage();
   }
 }

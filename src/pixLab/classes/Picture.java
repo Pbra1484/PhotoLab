@@ -455,6 +455,45 @@ public class Picture extends SimplePicture
 	  sadMeme.addMessage();
   }
   
+  public void  gLiTcH()
+  {
+	  Pixel[][]  picture = this.getPixels2D();
+	  Pixel main  =  null;
+	  Pixel second = null;
+	  for(int times = 0; times < 4; times++)
+	  {
+		  int randRow =  (int)Math.random()*picture.length;
+		  int randCol =  (int)Math.random()*picture[0].length;
+		  
+		  
+		  
+		  for(int row = randRow ; row < randRow + 100; row++)
+		  {
+			  for(int col = randCol ; col < randCol + 100; col++)
+			  {
+				  if(row <  picture.length - 10 && col < picture[0].length - 20 )
+				  {
+					  main = picture[row + 10][col + 20];
+					  
+					  if(row <  picture.length && col < picture[0].length)
+					  {
+						  second = picture[row][col];
+					  
+						  second.setColor(main.getColor());
+						  if(Math.random() < 0.1)
+						  {
+							  int red = (int)(Math.random() * 256);
+							  int green = (int)(Math.random() * 256);
+							  int blue = (int)(Math.random() * 256);
+							 second.setColor(new Color(red, green, blue));
+						  }
+					  }
+				  }
+			  }
+		  }
+	  }
+  }
+  
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
