@@ -121,7 +121,7 @@ public class PictureTester
 	  Picture sadMeme = new Picture("meh.jpg");
 	  sadMeme.addMessage("Singles Awarness Day", 60, 20);
 	  sadMeme.addMessage("The day that reminds you", 55, 40);
-	  sadMeme.addMessage("Its not woth the bad code", 55, 200);
+	  sadMeme.addMessage("Its not worth the bad code", 55, 200);
 	  sadMeme.explore();
 	  sadMeme.write("SADMeme.jpg");
   }
