@@ -139,6 +139,7 @@ public class PictureTester
 	  Picture glitch = new Picture("beach.jpg");
 	  glitch.gLiTcH();
 	  glitch.explore();
+	  glitch.write("Patrick_GlitchArt.jpg");
   }
   
   /** Main method for testing.  Every class can have a main
