@@ -500,6 +500,105 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  
+  
+  public void encriptRed(Picture pic)
+  {
+	  Pixel[][] picture = this.getPixels2D();
+	  Pixel[][] message = pic.getPixels2D();
+	  
+	  if(picture.length == message.length && picture[0].length == message[0].length)
+	  {
+		  for(int rows = 0; rows < picture.length; rows++)
+		  {
+			  for(int cols = 0; cols < picture.length; cols++)
+			  {
+				  
+				  if(picture[rows][cols].getRed()%2 == 1)
+				  {
+					  picture[rows][cols].setRed(picture[rows][cols].getRed()-1);
+				  }
+				  
+				  
+				  if(picture[rows][cols].getColor().equals(Color.white))
+				  {
+					  
+				  }
+				  else
+				  {
+					  
+				  }
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+			  }
+		  }
+	  }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
@@ -518,4 +617,19 @@ public class Picture extends SimplePicture
     beach.write("caterfly.jpg");
   }
   
+  
+  
 } // this } is the end of class Picture, put all new methods before this
+
+
+
+
+
+
+
+
+
+
+
+
+
