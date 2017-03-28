@@ -569,8 +569,34 @@ public class Picture extends SimplePicture
   }
   
   
-  
-  
+  public void cromakey(Picture toAdd)
+  {
+	  
+	  Pixel[][] background = this.getPixels2D();
+	  Pixel[][] added = toAdd.getPixels2D();
+	  
+	  Pixel back = null;
+	  Pixel add = null;
+	  
+	  for(int row = 0; row < background.length; row++)
+	  {
+		  for(int col = 0; col < background[0].length; col++)
+		  {
+			  back = background[row][col];
+			  
+			  if(row < added.length && col < added[0].length)
+			  {
+				  add = added[row][col];
+				  
+				  if(add.getRed() == 0 && add.getBlue() == 0 && add.getGreen() == 0)
+				  {
+					  
+				  }
+			  }
+			  
+		  }
+	  }
+  }
   
   
   
