@@ -142,6 +142,19 @@ public class PictureTester
 	  glitch.write("Patrick_GlitchArt.jpg");
   }
   
+  public static void testEncriptRed()
+  {
+	  Picture main = new Picture("Encodable.png");
+	  Picture message = new Picture("message.png");
+	  main.explore();
+	  message.explore();
+	  main.encriptRed(message);
+	  main.explore();
+	  main.decriptRed();
+	  main.explore();
+	  
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -178,7 +191,8 @@ public class PictureTester
     //testGetAverageForColumn(0);
 	//testEdgDetecsion();
 	//sadMeme();
-	  testGlitch();
+	//testGlitch();
 	//testSpecialCollage();
+	  testEncriptRed();
   }
 }

@@ -507,49 +507,66 @@ public class Picture extends SimplePicture
 	  Pixel[][] picture = this.getPixels2D();
 	  Pixel[][] message = pic.getPixels2D();
 	  
+	  Pixel sourcePixel = null;
+	  Pixel messagePixel = null;
+	  
 	  if(picture.length == message.length && picture[0].length == message[0].length)
 	  {
 		  for(int rows = 0; rows < picture.length; rows++)
 		  {
-			  for(int cols = 0; cols < picture.length; cols++)
+			  for(int cols = 0; cols < picture[0].length; cols++)
 			  {
 				  
-				  if(picture[rows][cols].getRed()%2 == 1)
-				  {
-					  picture[rows][cols].setRed(picture[rows][cols].getRed()-1);
-				  }
+				  sourcePixel = picture[rows][cols];
+				  messagePixel = message[rows][cols];
 				  
 				  
-				  if(picture[rows][cols].getColor().equals(Color.white))
+				  
+				 
+				  
+				  if(messagePixel.getRed() == 255 && messagePixel.getGreen() == 255 && messagePixel.getBlue() == 255)
 				  {
-					  
+					  int currentRed = sourcePixel.getRed();
+					  if (currentRed % 2 ==0)
+					  {
+						  sourcePixel.setRed(currentRed + 1);
+					  }
 				  }
 				  else
 				  {
-					  
+					  int currentRed = sourcePixel.getRed();
+					  if(currentRed % 2 != 0)
+					  {
+						  sourcePixel.setRed(currentRed - 1);
+					  }
 				  }
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
 			  }
 		  }
 	  }
+	  this.write("encrypted.png");
+	  this.explore();
   }
   
-  
-  
+  public void decriptRed()
+  {
+	  Pixel[][] decoded = this.getPixels2D();
+	  Pixel currentPixel = null;
+	  
+	  for(int row = 0; row < decoded.length; row++)
+	  {
+		  for (int col = 0; col < decoded[0].length; col++)
+		  {
+			  currentPixel = decoded[row][col];
+			  int currentRed = currentPixel.getRed();
+			  if(currentRed % 2 == 0)
+			  {
+				  currentPixel.setColor(new Color(127, 255, 0));
+			  }
+		  }
+	  }
+	  
+	  this.explore();
+  }
   
   
   
